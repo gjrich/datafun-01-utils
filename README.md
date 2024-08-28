@@ -1,2 +1,2 @@
 # datafun-01-utils
-Initial project
+Reusable utilities for my Python projects
