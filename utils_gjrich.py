@@ -1,15 +1,14 @@
-''' ITERATION 1
-
+''' 
 Module: Wheyland Pythoni - Building Better Modules
 
-This module provides a simple, reusable foundation for my analytics projects. 
-When we work hard to write useful code, we want it to be reusable.
-A good byline could be used in every Python analytics project we do.
+This module provides a simple, reusable foundation for analytics projects. 
+Code should be reusable.
+A good byline could be used in every Python analytics project that is done.
 
 Process:
 
-We don't write code from top to bottom; instead, we often write it from the outside in.
-Here's what a first draft of my utils_case.py might look like:
+Code is not written from top to bottom; instead, it is written from the outside, in.
+Here's what a first draft of utils_case.py might look like:
 
 1. I start with this docstring at the very beginning.
    I use it to clarify the purpose of my Python file and organize my thoughts.
@@ -21,14 +20,56 @@ Here's what a first draft of my utils_case.py might look like:
 4. I'll add the boilerplate conditional execution code so I only run the main() function when 
    this script is executed directly (but not when I import it into another file).
 
-I'll test it in an online interpreter to ensure this version runs correctly before continuing.
+Testing was completed in an online interpreter (https://www.online-python.com/)
 '''
 
+
+''' Iteration 3: Now additional variables will be declared to apply different data types.
+'''
+
+####################################################
+# Declare global variables (keep byline at end)
+# This information will be used fo ra smarter byline
+####################################################
+
+
+# Boolean to indicate whether the company has international clients
+has_international_clients: bool = True
+
+# Integer variable for the number of years in operation
+years_in_operation: int = 144
+
+# List of strings representing the skills offered by the company
+skills_offered: list = ["Data Analysis", "Machine Learning", "Harmonic Balancing", "Modular Consulting", "Equilibrium Evaluation"]
+
+# List of floats representing individual client satisfaction scores
+client_satisfaction_scores: list = [4.5, 4.4, 4.7, 4.2, 4.9, 5.0, 4.4, 4.4, 3.9, 4.7, 4.8]
+
+
+
 #####################################
-# Declare a global variable named byline.
+# Declare a global variable named byline
+# Make it an f-string to show our information
 #####################################
 
-byline: str = 'Wheyland Pythoni: Building Better Modules'
+byline: str = f"""
+----------------------------------------------------
+Wheyland Pythoni: Building Better Modules
+----------------------------------------------------
+Has International Clients:   {has_international_clients}
+Years in Operation:          {years_in_operation}
+Skills Offered:              {skills_offered}
+Client Satisfaction Scores:  {client_satisfaction_scores}
+"""
+
+
+#####################################
+# Define the get_byline function
+#####################################
+
+def get_byline() -> str:
+   # return a byline for Wheyland Pythoni
+   return byline
 
 #####################################
 # Define a main() function for this module.
@@ -45,7 +86,7 @@ byline: str = 'Wheyland Pythoni: Building Better Modules'
 
 def main() -> None:
     '''Print the byline to the console when this function is called.'''
-    print(byline)
+    print(get_byline())
 
 #####################################
 # Conditional Execution - Only call main() when executing this module as a script.
