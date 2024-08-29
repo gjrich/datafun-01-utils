@@ -24,8 +24,23 @@ Testing was completed in an online interpreter (https://www.online-python.com/)
 '''
 
 
-''' Iteration 3: Now additional variables will be declared to apply different data types.
+''' In the fourth interation, basic statistics are introduced using Python. 
+These include min(), max(), and the statistics module.
 '''
+
+
+####################################################
+# Modules Import - included at the top of the script
+####################################################
+
+# Modules provide additional tools and functions not included in the basic installation.
+# The following modules will be imported:
+#  'statistics' - provides tools to calculate pieces like averages
+# You can use ctrl+F to find where it is used
+# Look for examples like statistics.mean() and statistics.stdev()
+
+import statistics
+
 
 ####################################################
 # Declare global variables (keep byline at end)
@@ -47,10 +62,27 @@ client_satisfaction_scores: list = [4.5, 4.4, 4.7, 4.2, 4.9, 5.0, 4.4, 4.4, 3.9,
 
 
 
-#####################################
+####################################################
+# Calculate Basic Statistics
+# Completed BEFORE we declare the byline
+# Ensures values have been calculated & are ready for byline
+####################################################
+
+
+# Basic Stats using built-in functions min(), max() and statistics module functions mean() and stdev()
+min_score: float = min(client_satisfaction_scores)
+max_score: float = max(client_satisfaction_scores)
+mean_score: float = statistics.mean(client_satisfaction_scores)
+stdev_score: float = statistics.stdev(client_satisfaction_scores)
+
+
+
+
+
+####################################################
 # Declare a global variable named byline
 # Make it an f-string to show our information
-#####################################
+####################################################
 
 byline: str = f"""
 ----------------------------------------------------
@@ -63,17 +95,17 @@ Client Satisfaction Scores:  {client_satisfaction_scores}
 """
 
 
-#####################################
+####################################################
 # Define the get_byline function
-#####################################
+####################################################
 
 def get_byline() -> str:
    # return a byline for Wheyland Pythoni
    return byline
 
-#####################################
+####################################################
 # Define a main() function for this module.
-#####################################
+####################################################
 
 # Create a function named main.
 # A function is a block of code that performs a specific task.
@@ -88,9 +120,9 @@ def main() -> None:
     '''Print the byline to the console when this function is called.'''
     print(get_byline())
 
-#####################################
+####################################################
 # Conditional Execution - Only call main() when executing this module as a script.
-#####################################
+####################################################
 
 if __name__ == '__main__':
     main()
